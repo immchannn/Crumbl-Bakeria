@@ -1,0 +1,459 @@
+<html>
+<head>
+	<title>About Us</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+    
+	<title>About Us</title>
+    <style>
+        body {
+			font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5DC;
+        }
+		
+		h1 {
+            text-align: center;
+			font-family: "DM Serif Text", serif;
+		    font-weight: 400;
+		    font-style: normal
+		}
+		
+		#navbar {
+			overflow: hidden;
+			padding: 10px 0;
+			transition: 0.4s;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			z-index: 10;
+			text-align: center;
+			background-color: #C54B8C;
+			left: 0;
+			display: flex; /* Add flexbox */
+			align-items: center;
+			justify-content: space-between;
+			height: 60px;
+		}
+
+		#navbar a {
+			float: left;
+			color: black;
+			text-align: center;
+			padding: 12px 20px; 
+			text-decoration: none;
+			font-size: 20px;
+			line-height: 25px;
+			border-radius: 4px;
+			color: #FFFFFF;
+		}
+		
+		#navbar h1 {
+			font-size: 40px;  
+		}
+		#navbar a:hover {
+			background-color: pink;
+			color: black;
+		}
+
+		#navbar #logo:hover {
+			background-color: transparent; 
+			color: #FFFFFF;
+			transform: scale(1.1);
+		}
+
+		#navbar a.active {
+			color: white; 
+			background-color: #FFB6C1;
+		}
+
+		#navbar-right {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end; 
+			height: 100%; 
+		}
+		
+		.about-banner {
+		  width: 100%;
+		  height: auto;
+		  display: block;
+		  max-width: 100%;
+		  object-fit: cover;
+		  margin-top: 70px;
+		}
+		
+		/* Top Button */
+		#goToTopBtn {
+			display: none;
+			position: fixed;
+			bottom: 40px;
+			right: 30px;
+			z-index: 9999;
+			padding: 15px 25px;
+			border: none;
+			cursor: pointer;
+			background-color: transparent;
+		}
+		
+		#goToTopBtn img {
+			width: 70px;  
+			height: 70px; 
+		}
+		
+		#goToTopBtn:hover {
+			transform: scale(1.1);
+		}
+
+		#goToTopBtn:hover img {
+			transform: scale (1.1); 
+		}
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+		/* story section */
+		.the-story {
+			padding-left: 30px;
+		}
+
+		.the-story h2 {
+			margin-bottom: 20px;
+		}
+
+		.the-story p {
+			margin-bottom: 15px;
+			line-height: 1.6;
+			font-size: 18px;
+		}
+		
+		/* Info Section */
+		.info-table {
+			width: 80%; 
+			border-collapse: collapse; 
+			margin: 50px auto; 
+		}
+
+		.info-table td {
+			padding: 15px; 
+			border: 10px solid #F5F5DC; 
+			vertical-align: top; 
+		}
+
+		.info-table h3 {
+			font-size: 20px; 
+			margin-bottom: 10px; 
+			color: #D14A76; 
+			padding: 10px; 
+			text-align: center;
+		}
+
+		.info-table p {
+			font-size: 18px; 
+			font-weight: bold;
+			line-height: 1.6; 
+			color: #D14A76; 
+			background-color: #FFB6C1; 
+			border: 1px solid #FFB6C1; 
+			border-radius: 8px;
+			padding: 10px; 
+		}
+		
+		.info-table ul {
+			color: #D14A76; 
+			background-color: #FFB6C1; 
+			border: 1px solid #FFB6C1; 
+			border-radius: 8px;
+			padding: 30px; 
+		}
+		
+		.info-table li {
+			font-size: 18px;
+			color: #D14A76;
+			font-weight: bold;
+			line-height: 1.6; 
+		}
+
+		.info-table p,
+		.info-table ul {
+			transition: background-color 0.5s ease; 
+		}
+
+		.info-table p:hover,
+		.info-table ul:hover,
+		.info-table li:hover { 
+			background-color: #FFF8DC;
+		}
+		
+		/* Staff Section */
+		.team-section {
+		  text-align: center;
+		  margin: 50px auto;
+		  padding: 0 20px;
+		}
+		
+		.team-section h2 {
+		  margin: 20px 0; 
+		  padding: 10px;
+		  text-align: center; 
+		  padding-bottom: 35px;
+		}
+		
+		.staff-grid {
+		  display: grid;
+		  grid-template-columns: repeat(3, 1fr);
+		  gap: 20px;
+		  max-width: 1200px;
+		  margin: 0 auto;
+		  padding-bottom: 50px;
+		}
+
+		.staff-member {
+		  transform: translateX(0) translateY(0);
+		  transition: transform 0.3s ease;
+		}
+
+		.staff-member:nth-child(4),
+		.staff-member:nth-child(5) {
+		  transform: translateX(50%) translateY(0);
+		}
+
+		.staff-member:hover {
+		  transform: translateY(-5px) translateX(0);
+		}
+
+		.staff-member:nth-child(4):hover,
+		.staff-member:nth-child(5):hover {
+		  transform: translateX(50%) translateY(-5px);
+		}
+
+		.staff-image {
+		  width: 120px;
+		  height: 120px;
+		  border-radius: 50%;
+		  object-fit: cover;
+		  margin-bottom: 10px;
+		  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.staff-info {
+		  text-align: center;
+		}
+
+		.name {
+		  font-weight: bold;
+		  font-size: 16px;
+		  margin: 8px 0 4px;
+		}
+
+		.position {
+		  font-size: 14px;
+		  color: #666;
+		  margin: 0;
+		}
+
+		@media (max-width: 768px) {
+		  .staff-grid {
+			grid-template-columns: repeat(2, 1fr);
+		  }
+		}
+
+		@media (max-width: 480px) {
+		  .staff-grid {
+			grid-template-columns: 1fr;
+		  }
+		  
+		  .staff-member {
+			padding: 10px;
+		  }
+		}
+    </style>
+</head>
+<body>
+    <tr>
+        <td colspan="8">
+            <div id="navbar">
+            <a href="index.html" id="logo">
+					<h1>crumbl bakeria</h1></a>
+                <div id="navbar-right">
+                    <a  href="index.html">Home</a>
+                    <a href="product.html">Product</a>
+                    <a class="active" href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+		
+	 <tr>
+		<td colspan="8">
+			<img src="aboutbanner.png" class="about-banner">
+		</td>
+	</tr>
+	
+	
+	<button onclick="topFunction()" id="goToTopBtn" title="Go to top">
+		  <img src="up_button.png" alt="Go to top" />
+	</button>
+	
+    <main>
+		<table border="0" width="100%">
+        <tr>
+        <td>
+            <video width="600" height="400" controls autoplay loop muted poster="preview-image.jpg">
+  <source src="ad.mp4" type="video/mp4">
+</video>
+        </td>
+        <td class="the-story" style="text-align: justify;"> <br>
+            <h2>Our Story</h2>
+            <p>Crumbl Bakeria began as our dream in 2024. It all started with the smell of freshly baked bread wafting through a cozy kitchen. What began as a humble passion for kneading dough and experimenting with flavors quickly blossomed into a dream to share the joy of baking with others.</p>
+            <p>Whether it’s a morning pastry, a special occasion cake, or a batch of cookies for an afternoon pick-me-up, we’re here to make your moments sweeter, one bite at a time.</p>
+        </td>
+		</tr>
+		</table>
+		
+		<table class="info-table">
+			<tr>
+				<td>
+					<h3>Vision</h3>
+					<p>To be a beloved bakery that brings people together through delicious, handcrafted baked goods, creating memorable experiences and fostering community connections in every interaction, both in-store and online.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>Mission</h3>
+					<p>To create high-quality, freshly baked goods using premium organic ingredients, while fostering connections through a welcoming and delightful bakery experience.</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h3>Objectives</h3>
+					<ul>
+						<li>Ensure all baked goods meet the highest standards of quality and taste by sourcing local and organic ingredients.</li>
+						<li>Build strong relationships with our customers through exceptional service and community involvement, aiming for a customer satisfaction rate of 90% or higher.</li>
+						<li>Implement eco-friendly practices in our operations, including waste reduction and responsible sourcing, to minimize our environmental impact.</li>
+					</ul>
+				</td>
+			</tr>
+		</table>
+
+		<div class="team-section">
+		  <h2>Meet Our Team</h2>
+		  <div class="staff-grid">
+			<div class="staff-member">
+			  <img src="hazim.jpg" alt="Ahmad Hazim" class="staff-image" />
+			  <div class="staff-info">
+				<p class="name">Ahmad Hazim bin Kamaruddin</p>
+				<p class="position">Operation Manager</p>
+			  </div>
+			</div>
+			
+			<div class="staff-member">
+			  <img src="pika.jpg" alt="Nik Nurul Afiqah" class="staff-image" />
+			  <div class="staff-info">
+				<p class="name">Nik Nurul Afiqah binti Mohamed Sabki</p>
+				<p class="position">Bakery Manager</p>
+			  </div>
+			</div>
+			
+			<div class="staff-member">
+			  <img src="walni.jpg" alt="Alwani Najiah" class="staff-image" />
+			  <div class="staff-info">
+				<p class="name">Alwani Najiah binti Kamalul Shah</p>
+				<p class="position">Sales and Marketing Specialist</p>
+			  </div>
+			</div>
+			
+			<div class="staff-member">
+			  <img src="anis.jpg" alt="Anis Natasha" class="staff-image" />
+			  <div class="staff-info">
+				<p class="name">Anis Natasha binti Abd Aziz</p>
+				<p class="position">Cashier</p>
+			  </div>
+			</div>
+			
+			<div class="staff-member">
+			  <img src="maizan.jpg" alt="Maizan Nabilah" class="staff-image" />
+			  <div class="staff-info">
+				<p class="name">Maizan Nabilah binti Husin</p>
+				<p class="position">Inventory and Supply Coordinator</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+    </main>
+	
+    <footer style="background-color: #C54B8C; color: white; padding: 40px 20px; text-align: left; font-family: Arial, sans-serif;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
+        
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">About Crumbl Bakeria</h4>
+            <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
+                <li><a href="index.html" style="color: white; text-decoration: none;" class="link">Home</a></li>
+				<li><a href="about.html" style="color: white; text-decoration: none;" class="link">About us</a></li>
+				<li><a href="faq.html" style="color: white; text-decoration: none;" class="link">FAQ</a></li>
+                <li><a href="return policy.html" style="color: white; text-decoration: none;" class="link">Return Policy</a></li>
+        </div>
+		
+        
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;" class="link">Products</h4>
+            <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
+                <li><a href="product.html#breads" style="color: white; text-decoration: none;" class="link">Breads</a></li>
+                <li><a href="product.html#pastries" style="color: white; text-decoration: none;" class="link">Pastries</a></li>
+                <li><a href="product.html#cakes" style="color: white; text-decoration: none;" class="link">Cakes</a></li>
+            </ul>
+        </div>
+		
+        
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Customer Service</h4>
+            <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
+                <li><a href="contact.html" style="color: white; text-decoration: none; class="link">Contact Us</a></li>
+                <li><p><b>Phone:</b> +603-9202 6972 (Office)</p></li>
+                <li><p><b>Hotline:</b> +6010-362 7234</p></li>
+				<li><a class="Location"><p>UG-23A, Shaftsbury Putrajaya,<br>Presint 1, 62050 Putrajaya,<br>Wilayah Persekutuan Putrajaya.</p></a></li>
+            </ul>
+        </div>
+		
+       
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Follow Us</h4>
+            <a href="https://www.tiktok.com/@crumblbakeria" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center; margin-bottom: 10px;">
+                <img src="tiktok_icon.png" alt="TikTok" style="width: 24px; height: 24px; margin-right: 8px;"> TikTok
+            </a>
+            <a href="https://www.instagram.com/crumbl_bakeria?igsh=dnF4NjQ1cDJpcHdo&utm_source=qr" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center;">
+                <img src="instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;"> Instagram
+            </a>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px; font-size: 14px;">
+        <p>&copy; 2025 Crumbl Bakeria. All rights reserved.</p>
+    </div>
+	</footer>
+	
+	<script>
+	
+    window.onscroll = function() {
+    var mybutton = document.getElementById("goToTopBtn");
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
+	};
+
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
+	</script>
+</body>
+</html>

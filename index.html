@@ -1,0 +1,538 @@
+<html>
+<head>
+    <title>Crumbl Bakeria</title>
+	<link rel="icon" href="images/logo.png" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+    <style>
+		body {
+			font-family: 'Merriweather', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5DC;
+        }
+        
+        h1 {
+            text-align: center;
+			font-family: "DM Serif Text", serif;
+		    font-weight: 400;
+		    font-style: normal;
+		}
+
+        p {
+            text-align: center;
+			font-family: "DM Serif Text", serif;
+			font-weight: 400;
+			font-style: normal;
+		}
+		
+		.slideshow-container {
+            position: relative; 
+            max-width: 100%; 
+            margin: 20px auto; 
+            overflow: hidden; 
+			min-height: 400px;
+        }
+
+        .mySlides {
+            display: none; 
+        }
+
+        .mySlides img {
+			width: 100%; 
+			height: auto;
+			border-radius: 8px;
+			margin-top: 50px;
+		}
+
+        .prev, .next {
+            cursor: pointer; 
+			position: absolute;
+			top: 50%;
+			width: auto; 
+			padding: 16px;
+			color: white; 
+			font-weight: bold; 
+			font-size: 18px;
+			transition: 0.6s ease; 
+			border-radius: 0 3px 3px 0; 
+			user-select: none; 
+		}
+
+        .prev {
+            left: 0; 
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px; 
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #FFB6C1; 
+        }
+
+        .dot {
+            height: 15px; 
+            width: 15px; 
+            margin: 0 2px; 
+            background-color: #bbb; 
+            border-radius: 50%; 
+            display: inline-block; 
+            transition: background-color 0.6s ease; 
+            cursor: pointer; 
+        }
+
+        .active, .dot:hover {
+            background-color: #FFB6C1;
+        }
+		  
+		#navbar {
+    overflow: hidden;
+    padding: 10px 0;
+    transition: 0.4s;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    text-align: center;
+    background-color: #C54B8C;
+    left: 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    height: 60px; 
+}
+
+		#navbar a {
+			float: left;
+			color: black;
+			text-align: center;
+			padding: 12px 20px; 
+			text-decoration: none;
+			font-size: 20px;
+			line-height: 25px;
+			border-radius: 4px;
+			color: #FFFFFF;
+		}
+
+		#navbar a:hover {
+			background-color: pink;
+			color: black;
+		}
+
+		#navbar #logo:hover {
+			background-color: transparent; 
+			color: #FFFFFF;
+			transform: scale(1.1);
+		}
+
+		#navbar a.active {
+			color: white; 
+			background-color: #FFB6C1;
+		}
+
+#navbar-right {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; 
+    height: 100%;
+}
+		
+		/* Top Button */
+		#goToTopBtn {
+			display: none;
+			position: fixed;
+			bottom: 40px;
+			right: 30px;
+			z-index: 9999;
+			padding: 15px 25px;
+			border: none;
+			cursor: pointer;
+			background-color: transparent;
+		}
+		
+		#goToTopBtn img {
+    width: 70px;  
+    height: 70px; 
+}
+		
+		#goToTopBtn:hover {
+			transform: scale(1.1);
+		}
+
+		#goToTopBtn:hover img {
+			transform: scale (1.1); 
+		}
+		
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+			
+        }
+		
+		/* Service Banner */
+		.banner-row {
+			height: 350px; 
+			text-align: center; 
+			background-color: #F5F5DC; 
+		}
+
+		.banner-cell {
+			padding: 70;
+		}
+
+		.banner-image {
+			width: 100%; 
+			height: 100%; 
+			display: block; 
+		}
+		
+		
+		.best-seller {
+			text-align: center;
+			background-color: #F5F5DC;
+			padding: 70px 0; 
+		}
+
+		.best-cell {
+			padding: 20px; 
+		}
+
+		.best-cell h1 {
+			font-size: 2.5em; 
+			color: #C54B8C;
+			margin: 0;
+		}
+
+		.best-cell p {
+			font-size: 1.2em; 
+			color: #333;
+			margin: 10px 0 0; 
+			line-height: 1.5; 
+		}
+		
+		.product-row {
+			text-align: center; 
+			background-color: #F5F5DC;
+			margin-bottom: 100px;
+		}
+
+		.product-cell {
+			padding: 20px;
+			margin-bottom: 100px;
+		}
+
+		.bs {
+			width: 100px; 
+			height: auto; 
+			display: block;
+			margin: 0 auto 10px; 
+			transition: transform 0.2s; 
+		}
+
+		.bs:hover {
+			transform: scale(1.05); 
+		}
+
+		.product-cell p:first-of-type {
+			font-size: 1.2em; 
+			font-weight: bold; 
+			margin: 10px 0 5px; 
+		}
+
+		.product-cell p:last-of-type {
+			font-size: 1em; 
+			color: #C54B8C; 
+			margin: 0; 
+		}
+		
+		.product-header-row {
+			background-color: #F5F5DC; 
+			text-align: center; 
+			padding: 20px 0 30px; 
+		}
+
+		.product-header-cell {
+			padding: 20px; 
+		}
+
+		.product-header-cell h1 {
+			font-size: 2.5em; 
+			color: #C54B8C; 
+			margin: 0; 
+			text-transform: uppercase; 
+			margin-top: 30px;
+		}
+		
+		.product-image-row {
+			background-color: #F5F5DC; 
+			text-align: center; 
+			padding: 50px 0;
+		}
+
+.product-image-cell img {
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover; 
+    margin: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: inline-block;
+}
+
+.product-image-cell a:hover img {
+    transform: scale(1.1); 
+    opacity: 0.5; 
+}
+
+.product-image-cell a {
+    display: inline-block;
+    position: relative;
+}
+
+.product-image-cell a:hover::after {
+    content: attr(data-hover-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+	font-family: 'Merriweather', serif;
+	background-color: pink;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+
+		.op {
+			width: 200px; 
+			height: 200px; 
+			margin: 0 15px;
+			object-fit: cover;
+			transition: transform 0.2s;
+			border-radius: 10px;
+			margin-bottom: 100px;
+		}
+
+		.op:hover {
+			transform: scale(1.05);
+		}
+
+    </style>
+</head>
+<body>
+    <table border="0" align="center" width="100%">
+	
+        <tr>
+            <td colspan="8">
+                <div id="navbar">
+                    <a href="index.html" id="logo">
+					<h1>crumbl bakeria</h1></a>
+                    <div id="navbar-right">
+                        <a class="active" href="index.html">Home</a>
+                        <a href="product.html">Product</a>
+                        <a href="about.html">About Us</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+	
+		<button onclick="topFunction()" id="goToTopBtn" title="Go to top">
+		  <img src="up_button.png" alt="Go to top" />
+		</button>
+        
+        <tr>
+            <td>
+                <div class="slideshow-container">
+                    <div class="mySlides fade" style="display: block;">
+                        <img src="banner.png" alt="Banner 1">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="banner2.png" alt="Banner 2">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="banner3.png" alt="Banner 3">
+                    </div>
+					
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                <div style="text-align:center; margin-top: 10px;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </td>
+        </tr>
+		
+	</table>
+
+	<table border="0" align="center" width="1250">
+		<tr height="700">
+            <td colspan="8">
+                <img src="banner4.png" class="banner-image" alt="Banner">
+            </td>
+        </tr>
+		
+        <tr class="best-seller">
+			<td class="best-cell" colspan="8">
+				<h1>Best Sellers</h1>
+				<p>Don’t miss out on our top-selling items—freshly baked and loved by everyone!</p>
+			</td>
+		</tr>
+		
+       <tr class="product-row" height="300">
+			<td class="product-cell" colspan="2">
+				<img src="Baguette.png" alt="Baguette" class="bs">
+				<p>Baguette</p>
+				<p>RM 6.90</p>
+			</td>
+			<td class="product-cell" colspan="2">
+				<img src="apple.png" alt="Apple Turnover" class="bs">
+				<p>Apple Turnover</p>
+				<p>RM 5.90</p>
+			</td>
+			<td class="product-cell" colspan="2">
+				<img src="Garlic Bread.png" alt="Garlic Bread" class="bs">
+				<p>Garlic Bread</p>
+				<p>RM 7.90</p>
+			</td>
+			<td class="product-cell" colspan="2">
+				<img src="Cheesecake.png" alt="Cheesecake" class="bs">
+				<p>Strawberry Cheesecake</p>
+				<p>RM 7.90</p>
+			</td>
+		</tr>
+		
+		<tr class="product-header-row">
+			<td class="product-header-cell" colspan="8">
+				<h1>Our Products</h1>
+			</td>
+		</tr>
+		
+		<tr class="product-image-row" height="300">
+    <td class="product-image-cell" colspan="8" align="center">
+        <a href="product.html#breads" data-hover-text="Breads">
+            <img class="op" src="product1.jpg" alt="breads">
+        </a>
+        <a href="product.html#pastries" data-hover-text="Pastries">
+            <img class="op" src="product2.jpg" alt="pastries">
+        </a>
+        <a href="product.html#cakes" data-hover-text="Cakes">
+            <img class="op" src="product3.jpg" alt="Cakes">
+        </a>
+		<br>
+    </td>
+</tr>
+
+		
+    </table>
+	
+	<footer style="background-color: #C54B8C; color: white; padding: 40px 20px; text-align: left; font-family: Arial, sans-serif;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
+        
+		
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">About Crumbl Bakeria</h4>
+            <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
+                <li><a href="index.html" style="color: white; text-decoration: none;" class="link">Home</a></li>
+				<li><a href="about.html" style="color: white; text-decoration: none;" class="link">About us</a></li>
+				<li><a href="faq.html" style="color: white; text-decoration: none;" class="link">FAQ</a></li>
+                <li><a href="return policy.html" style="color: white; text-decoration: none;" class="link">Return Policy</a></li>
+            </ul>
+        </div>
+		
+        
+		
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;" class="link">Products</h4>
+            <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
+                <li><a href="product.html#breads" style="color: white; text-decoration: none;" class="link">Breads</a></li>
+                <li><a href="product.html#pastries" style="color: white; text-decoration: none;" class="link">Pastries</a></li>
+                <li><a href="product.html#cakes" style="color: white; text-decoration: none;" class="link">Cakes</a></li>
+            </ul>
+        </div>
+		
+        
+		
+		<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+			<h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Customer Service</h4>
+			<ul style="list-style-type: none; padding: 0; line-height: 1.8;">
+				<li><a href="contact.html" style="color: white; text-decoration: none;" class="link">Contact Us</a></li><br>
+				<li><b>Phone:</b> +603-9202 6972 (Office)</li><br>
+				<li><b>Hotline:</b> +6010-362 7234</li><br>
+				<li><b></b> UG-23A, Shaftsbury Putrajaya,<br>Presint 1, 62050 Putrajaya,<br>Wilayah Persekutuan Putrajaya.</li>
+			</ul>
+		</div>
+		
+        
+		
+        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Follow Us</h4>
+            <a href="https://www.tiktok.com/@crumbl_bakeria?_t=ZS-8t3pwTk9Mud&_r=1" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center; margin-bottom: 10px;">
+                <img src="tiktok_icon.png" alt="TikTok" style="width: 24px; height: 24px; margin-right: 8px;"> TikTok
+            </a>
+            <a href="https://www.instagram.com/crumbl_bakeria?igsh=dnF4NjQ1cDJpcHdo&utm_source=qr" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center;">
+                <img src="instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;"> Instagram
+            </a>
+        </div>
+    </div>
+    
+	
+    <div style="text-align: center; margin-top: 20px; font-size: 14px;">
+        <p>&copy; 2025 Crumbl Bakeria. All rights reserved.</p>
+    </div>
+	</footer>
+	
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+		
+		
+		window.onscroll = function() {
+		var mybutton = document.getElementById("goToTopBtn");
+		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+			mybutton.style.display = "block";
+		} else {
+			mybutton.style.display = "none";
+		}
+		};
+
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Crumbl Bakeria</title>
+    <link rel="stylesheet" href="style.css">
+	
+<style>
+/* Basic styling for the FAQ section */
+footer {
+    background-color: #F5F5DC;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.faq {
+    margin-top: 20px;
+}
+
+.faq-item {
+    margin: 10px 0;
+}
+
+.faq-btn {
+    background-color: #e075a3;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.faq-btn:hover {
+    background-color: #eb96bb;
+}
+
+.faq-content {
+    padding: 10px 0;
+    display: none;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+</style>
+
+</head>
+<body>
+
+    <!-- Your website content -->
+
+    <!-- FAQ Section -->
+    <footer>
+        <div class="footer-container">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq">
+                <div class="faq-item">
+                    <button class="faq-btn">What types of bread does Crumbl Bakeria offer?</button>
+                    <div class="faq-content">
+                        <p>We offer a variety of breads, including sweet breads, whole wheat, gluten-free options, and artisanal loaves freshly baked every day.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">Does Crumbl Bakeria accept orders for special events?</button>
+                    <div class="faq-content">
+                        <p>Yes, we accept custom orders for weddings, birthdays, and other special occasions. Please contact us at least 7 days in advance to discuss your requirements.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">What delivery options does Crumbl Bakeria provide?</button>
+                    <div class="faq-content">
+                        <p>We provide local delivery through trusted couriers. Delivery charges depend on your location, and we also offer self-pickup at our store.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-btn">What is Crumbl Bakeria's return policy?</button>
+                    <div class="faq-content">
+                        <p>Due to the perishable nature of our products, we do not accept returns or exchanges. If there's an issue with your order, please contact us within 24 hours, and we’ll do our best to resolve it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+ <script>
+    // JavaScript to toggle FAQ content visibility
+    document.querySelectorAll('.faq-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script
+</body>
+</html>
