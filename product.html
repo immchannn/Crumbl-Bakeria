@@ -1,190 +1,65 @@
 <html>
 <head>
     <title>Products</title>
-	<link rel="icon" href="images/logo.png" type="image/x-icon">
 	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
 	
     <style>
 	
-	body {
-			font-family: 'Merriweather', serif;
-            line-height: 1.6;
+/* Style the navigation bar */
+nav {
+  overflow: hidden;
+  background-color: #FFC0CB;
+  border: 1px solid #ccc;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  align-items: center;  
+}
+
+/* Style the buttons inside the navigation bar */
+nav button.tablinks {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 16px;
+  color: #333;
+  float: left;
+}
+
+/* Change background color of buttons on hover */
+nav button.tablinks:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+nav button.tablinks.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content (hidden by default) */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F5F5DC;
         }
-		
-		  
-		#navbar {
-    overflow: hidden;
-    padding: 10px 0;
-    transition: 0.4s;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    text-align: center;
-    background-color: #C54B8C;
-    left: 0;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    height: 60px; 
-}
-
-		#navbar a {
-			float: left;
-			color: black;
-			text-align: center;
-			padding: 12px 20px; 
-			text-decoration: none;
-			font-size: 20px;
-			line-height: 25px;
-			border-radius: 4px;
-			color: #FFFFFF;
-		}
-
-		#navbar a:hover {
-			background-color: pink;
-			color: black;
-		}
-
-		#navbar #logo:hover {
-			background-color: transparent; 
-			color: #FFFFFF;
-			transform: scale(1.1);
-		}
-
-		#navbar a.active {
-			color: white; 
-			background-color: #FFB6C1;
-		}
-
-#navbar-right {
-    display: flex;
-    align-items: center; 
-    justify-content: flex-end; 
-    height: 100%; 
-}
-		
-		.product-banner {
-		  width: 100%;
-		  height: auto;
-		  display: block;
-		  max-width: 100%;
-		  object-fit: cover;
-		  margin-top: 70px;
-		}
-		
-		.product-banner:hover {
-    transform: none; 
-    opacity: 1; 
-}
-		
-		.marquee {
-            font-size: 20px;
-            color: white;
-            background-color: #FF69B4;
-            padding: 10px;
+        h1 {
             text-align: center;
-            width: 100%;
-            overflow: hidden;
-			cursor: pointer;
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin-bottom: 40px;
         }
-
-        .music-symbols {
-            font-size: 30px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-		
-		/* Top Button */
-		#goToTopBtn {
-			display: none;
-			position: fixed;
-			bottom: 60px;
-			right: 30px;
-			z-index: 9999;
-			padding: 15px 25px;
-			border: none;
-			cursor: pointer;
-			background-color: transparent;
-		}
-		
-		#goToTopBtn img {
-    width: 70px;  
-    height: 70px; 
-}
-		
-		#goToTopBtn:hover {
-			transform: scale(1.1);
-		}
-
-		#goToTopBtn:hover img {
-			transform: scale (1.1); 
-		}
-		
-		p {
-			text-align: center;
-			font-family: "DM Serif Text", serif;
-			font-weight: 400;
-			font-style: normal;
-		}
-				
-		
-		nav {
-		  overflow: hidden;
-		  background-color: #FFC0CB;
-		  border: 1px solid #ccc;
-		  text-align: center;
-		  display: flex;
-		  justify-content: center; 
-		  align-items: center;  
-		  margin-top: 40px;
-		}
-
-		nav button.tablinks {
-		  background-color: inherit;
-		  border: none;
-		  outline: none;
-		  cursor: pointer;
-		  padding: 14px 16px;
-		  transition: 0.3s;
-		  font-size: 25px;
-		  color: #333;
-		  float: left;
-		  font-family: 'Merriweather', serif;
-			font-weight: bold;
-		}
-
-		
-		nav button.tablinks:hover {
-		  background-color: #F5F5DC;
-		}
-
-		
-		nav button.tablinks.active {
-		  background-color: #F5F5DC;
-		}
-
-		
-		.tabcontent {
-		  display: none;
-		  padding: 6px 12px;
-		  border: 1px solid #ccc;
-		  border-top: none;
-		}
-
- h1 {
-            text-align: center;
-			font-family: "DM Serif Text", serif;
-		    font-weight: 400;
-		    font-style: normal;
-		}
-
         
         img {
             width: 100px;
@@ -195,103 +70,94 @@
             transform: scale(1.1);
         }
 		
-		#breads, #pastries, #cakes {
-			text-align: center;
-			margin: 30 auto;
-			
-		}
-		
+#breads, #pastries, #cakes {
+    text-align: center;
+    margin: 0 auto;
+	
+}
 		.checked {
-		  color: orange;
-		}
-
-		.add-to-cart {
-    background-color: #DB7093;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+  color: orange;
 }
 
-
-		.add-to-cart:hover {
-    background-color: #FFB6C1;
-    transform: scale(1.05);
+.add-to-cart {
+  background-color: #DB7093; /* Tomato color background */
+  color: white; /* White text color */
+  border: none; /* Remove border */
+  padding: 12px 24px; /* Padding inside the button */
+  font-size: 16px; /* Font size for the text */
+  font-weight: bold; /* Make text bold */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transition for hover effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
 }
 
+/* Hover effect for the button */
+.add-to-cart:hover {
+  background-color: #FFB6C1; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Focus effect for the button (when clicked or focused) */
 .add-to-cart:focus {
-    outline: none;
-    box-shadow: 0 0 8px rgba(255, 99, 71, 0.8);
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 8px rgba(255, 99, 71, 0.8); /* Add a glowing effect */
 }
 
+/* Active effect for the button (when it's pressed) */
 .add-to-cart:active {
-    transform: scale(0.98);
+  transform: scale(0.98); /* Slightly shrink the button when clicked */
 }
 
-
-		.btn {
-		  border: none;
-		  border-radius: 5px;
-		  padding: 12px 20px;
-		  font-size: 16px;
-		  cursor: pointer;
-		  background-color: #282A35;
-		  color: white;
-		  position: relative;
-		}
-
-		.ribbon {
-		  width: 60px;
-		  font-size: 14px;
-		  padding: 4px;
-		  position: absolute;
-		  top: 0%; 
-		  left: 50%; 
-		  transform: translate(-50%, -50%) rotate(20deg);
-		  text-align: center;
-		  border-radius: 25px;
-		  background-color: red;
-		  color: white;
-		}
-
-		   td {
-		  line-height: 2;
-		  padding: 10px;
-		}     
-			.cart-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #DB7093;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.btn {
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #282A35;
+  color: white;
+  position: relative;
 }
 
-.add-to-cart-floating:hover {
-    background-color: #FFB6C1;
-    transform: scale(1.05);
+.ribbon {
+  width: 60px;
+  font-size: 14px;
+  padding: 4px;
+  position: absolute;
+  top: 0%; 
+  left: 50%; 
+  transform: translate(-50%, -50%) rotate(20deg);
+  text-align: center;
+  border-radius: 25px;
+  background-color: red;
+  color: white;
+}
+
+   td {
+  line-height: 2; /* Increase the line-height (2 is double spacing) */
+  padding: 10px; /* Optional: Add some padding inside the <td> */
+}     
+		  .cart-btn {
+               position: fixed;  /* Fixes the button to a specific location */
+    top: 20px;        /* Distance from the top of the page */
+    right: 20px;      /* Distance from the right edge of the page */
+    background-color: #4CAF50;  /* Button background color */
+    color: white;     /* Text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-size: 16px;  /* Font size */
+    border: none;     /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;  /* Changes the cursor to a pointer on hover */
+    z-index: 1000;    /* Ensures the button stays on top */
 }
 
 
         .cart-btn:hover {
-            background-color: #FFC0CB;
+            background-color: #4CAF50;
         }
 
-        
+        /* Cart overlay styles */
         .cart-overlay {
             display: none;
             position: fixed;
@@ -316,147 +182,50 @@
 
         .cart-overlay .close-btn {
             color: #fff;
-            background-color: #DE3163;
+            background-color: #e74c3c;
             padding: 5px 10px;
             border: none;
             cursor: pointer;
         }
 
         .cart-overlay .close-btn:hover {
-            background-color: #FF69B4;
+            background-color: #c0392b;
+        }
+		
+ .order-placed-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #000;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
         }
 
-
-		.order-placed-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #F3CFC6;
-    padding: 30px 40px;
-    border: 2px solid #FFF;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    display: none;
-    border-radius: 12px;
-    font-family: 'Arial', sans-serif;
-    z-index: 9999;
-    width: 80%;
-    max-width: 400px;
-    animation: fadeIn 0.5s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.order-placed-popup button {
-    background-color: #FF1493;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.order-placed-popup button:hover {
-    background-color: #FF69B4;
-    transform: scale(1.05);
-}
-
-.order-placed-popup button:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.order-placed-popup button:active {
-    transform: scale(0.98);
-}
-
-.order-placed-popup button {
-    background-color: #C54B8C;
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.order-placed-popup button:hover {
-    background-color: #a03d74;
-    transform: scale(1.05);
-}
-
-.order-placed-popup button:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.order-placed-popup button:active {
-    transform: scale(0.98);
-}
-
+        .order-placed-popup button {
+            margin-top: 10px;
+        }
 
     </style>
 </head>
 <body>
-
-
-
-	<tr>
-        <td colspan="8">
-            <div id="navbar">
-            <a href="index.html" id="logo">
-					<h1>crumbl bakeria</h1></a>
-                <div id="navbar-right">
-                    <a href="index.html">Home</a>
-                    <a class="active" href="product.html">Product</a>
-                    <a href="about.html">About Us</a>
-                    <a href="contact.html">Contact Us</a>
-                </div>
-            </div>
-        </td>
-    </tr>
-	<tr>
-		<td colspan="8">
-			<img src="productbanner.png" class="product-banner">
-		</td>
-    </tr>
-	
-	<div style="width: 100%;">
-        <marquee scrollamount="20" scrolldelay="120" class="marquee" id="marquee" onclick="toggleSound()">
-    🎶 Let the music accompany your browsing experience! Click to play! 🎧
-</marquee>
-    </div>
-
-    <audio id="audio" src="bgm.mp3" preload="auto"></audio>
-
-
-	<button onclick="topFunction()" id="goToTopBtn" title="Go to top">
-		  <img src="up_button.png" alt="Go to top" />
-	</button>
+    <h1>All Products</h1>
 	
 	<nav>
-	  <a href="#breads"><button class="tablinks">Breads</button></a>
-	  <a href="#pastries"><button class="tablinks">Pastries</button></a>
-	  <a href="#cakes"><button class="tablinks">Cakes</button></a>
-	</nav>
+  <a href="#breads"><button class="tablinks">Breads</button></a>
+  <a href="#pastries"><button class="tablinks">Pastries</button></a>
+  <a href="#cakes"><button class="tablinks">Cakes</button></a>
+</nav>
 	
 
     <h2 id="breads">Breads</h2>
     <table id="myTable" border="0" width="1250" height="1000" align="center" style="text-align: center; vertical-align: middle; table-layout: fixed;">
         <tr>
             <td style="position: relative;">
-    <img src="sourdough.png" alt="Sourdough">
+    <img src="photo/sourdough.png" alt="Sourdough">
 				<p>Sourdough</p>
                 <br>RM 10.90
                 <br><button class="add-to-cart" data-product="Sourdough" data-price="10.90">Add to Cart</button>
@@ -469,7 +238,7 @@
 <span class="fa fa-star checked"></span>
             </td>
             <td>
-    <img src="wholewheat.png" alt="Whole Wheat Bread">
+    <img src="photo/wholewheat.png" alt="Whole Wheat Bread">
     <p>Whole Wheat Bread</p>
     <br>RM 5.90
     <br><button class="add-to-cart" data-product="Whole Wheat Bread" data-price="5.90">Add to Cart</button>
@@ -482,7 +251,7 @@
 <span class="fa fa-star checked"></span>
 </td>
 <td>
-    <img src="rye.png" alt="Rye Bread">
+    <img src="photo/rye.png" alt="Rye Bread">
     <p>Rye Bread</p>
     <br>RM 8.90
     <br><button class="add-to-cart" data-product="Rye Bread" data-price="8.90">Add to Cart</button>
@@ -495,7 +264,7 @@
 <span class="fa fa-star checked"></span>
 </td>
 <td>
-    <img src="focaccia.png" alt="Focaccia">
+    <img src="photo/focaccia.png" alt="Focaccia">
     <p>Focaccia</p>
     <br>RM 12.90
     <br><button class="add-to-cart" data-product="Focaccia" data-price="12.90">Add to Cart</button>
@@ -512,7 +281,7 @@
 
 <tr>
     <td style="position: relative;">
-        <img src="Baguette.png" alt="Baguette">
+        <img src="photo/Baguette.png" alt="Baguette">
         <p>Baguette</p>
         <span class="ribbon">HOT</span>
         <br>RM 6.90
@@ -526,7 +295,7 @@
 <span class="fa fa-star checked"></span>
     </td>
     <td>
-        <img src="Ciabatta.png" alt="Ciabatta">
+        <img src="photo/Ciabatta.png" alt="Ciabatta">
         <p>Ciabatta</p>
         <br>RM 7.90
         <br><button class="add-to-cart" data-product="Ciabatta" data-price="7.90">Add to Cart</button>
@@ -539,7 +308,7 @@
 <span class="fa fa-star checked"></span>
     </td>
     <td style="position: relative;">
-        <img src="Garlic Bread.png" alt="Garlic Bread">
+        <img src="photo/Garlic Bread.png" alt="Garlic Bread">
         <p>Garlic Bread</p>
         <span class="ribbon">HOT</span>
         <br>RM 7.90
@@ -553,7 +322,7 @@
 <span class="fa fa-star checked"></span>
     </td>
     <td>
-        <img src="Multigrain Bread.png" alt="Multigrain Bread">
+        <img src="photo/Multigrain Bread.png" alt="Multigrain Bread">
         <p>Multigrain Bread</p>
         <br>RM 8.90
         <br><button class="add-to-cart" data-product="Multigrain Bread" data-price="8.90">Add to Cart</button>
@@ -571,7 +340,7 @@
 <tr>
     <td>
 	
-        <img src="Olive Bread.png" alt="Olive Bread">
+        <img src="photo/Olive Bread.png" alt="Olive Bread">
         <p>Olive Bread</p>
         <br>RM 11.90
         <br><button class="add-to-cart" data-product="Olive Bread" data-price="11.90">Add to Cart</button>
@@ -584,7 +353,7 @@
 <span class="fa fa-star checked"></span>
     </td>
     <td>
-        <img src="Milk Bread.png" alt="Milk Bread">
+        <img src="photo/Milk Bread.png" alt="Milk Bread">
         <p>Milk Bread</p>
         <br>RM 8.90
         <br><button class="add-to-cart" data-product="Milk Bread" data-price="8.90">Add to Cart</button>
@@ -597,7 +366,7 @@
 <span class="fa fa-star checked"></span>
     </td>
     <td>
-        <img src="Challah Bread.png" alt="Challah Bread">
+        <img src="photo/Challah Bread.png" alt="Challah Bread">
         <p>Challah Bread</p>
         <br>RM 9.90
         <br><button class="add-to-cart" data-product="Challah Bread" data-price="9.90">Add to Cart</button>
@@ -610,7 +379,7 @@
 <span class="fa fa-star checked"></span>
     </td>
     <td>
-        <img src="Pita Bread.png" alt="Pita Bread">
+        <img src="photo/Pita Bread.png" alt="Pita Bread">
         <p>Pita Bread</p>
         <br>RM 4.90
         <br><button class="add-to-cart" data-product="Pita Bread" data-price="4.90">Add to Cart</button>
@@ -624,6 +393,8 @@
     </td>
 </tr>
 
+<tr height="80" class="separator-row"><td colspan="4"></td></tr>
+
 </table>
 
 
@@ -631,7 +402,7 @@
 <table border="0" width="1250" height="1000" align="center" style="text-align: center; vertical-align: middle; table-layout: fixed;">
     <tr>
         <td>
-            <img src="Croissant.png" alt="Croissant">
+            <img src="photo/Croissant.png" alt="Croissant">
             <p>Croissant</p>
             <br>RM 5.90
             <br><button class="add-to-cart" data-product="Croissant" data-price="5.90">Add to Cart</button>
@@ -644,7 +415,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="pain.png" alt="Pain au Chocolat">
+            <img src="photo/pain.png" alt="Pain au Chocolat">
             <p>Pain au Chocolat</p>
             <br>RM 6.90
             <br><button class="add-to-cart" data-product="Pain au Chocolat" data-price="6.90">Add to Cart</button>
@@ -657,7 +428,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="danish.png" alt="Danish Pastry">
+            <img src="photo/danish.png" alt="Danish Pastry">
             <p>Danish Pastry</p>
             <br>RM 7.90
             <br><button class="add-to-cart" data-product="Danish Pastry" data-price="7.90">Add to Cart</button>
@@ -670,7 +441,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td style="position: relative;">
-            <img src="cinnamon.png" alt="Cinnamon Roll">
+            <img src="photo/cinnamon.png" alt="Cinnamon Roll">
             <p>Cinnamon Roll</p>
 			<span class="ribbon">HOT</span>
             <br>RM 6.90
@@ -688,7 +459,7 @@
 
     <tr>
         <td>
-            <img src="apple.png" alt="Apple Turnover">
+            <img src="photo/apple.png" alt="Apple Turnover">
             <p>Apple Turnover</p>
             <br>RM 5.90
             <br><button class="add-to-cart" data-product="Apple Turnover" data-price="5.90">Add to Cart</button>
@@ -701,7 +472,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="cheesepuff.png" alt="Cheese Puff">
+            <img src="photo/cheesepuff.png" alt="Cheese Puff">
             <p>Cheese Puff</p>
             <br>RM 5.90
             <br><button class="add-to-cart" data-product="Cheese Puff" data-price="5.90">Add to Cart</button>
@@ -714,7 +485,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="almond.png" alt="Almond Croissant">
+            <img src="photo/almond.png" alt="Almond Croissant">
             <p>Almond Croissant</p>
             <br>RM 7.90
             <br><button class="add-to-cart" data-product="Almond Croissant" data-price="7.90">Add to Cart</button>
@@ -727,7 +498,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="Brioche.png" alt="Brioche">
+            <img src="photo/Brioche.png" alt="Brioche">
             <p>Brioche</p>
             <br>RM 8.90
             <br><button class="add-to-cart" data-product="Brioche" data-price="8.90">Add to Cart</button>
@@ -744,7 +515,7 @@
 
     <tr>
         <td>
-            <img src="Strudel.png" alt="Apple Strudel">
+            <img src="photo/Strudel.png" alt="Apple Strudel">
             <p>Apple Strudel</p>
             <br>RM 6.90
             <br><button class="add-to-cart" data-product="Apple Strudel" data-price="6.90">Add to Cart</button>
@@ -757,7 +528,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="tart.png" alt="Fruit Tart">
+            <img src="photo/tart.png" alt="Fruit Tart">
             <p>Fruit Tart</p>
             <br>RM 8.90
             <br><button class="add-to-cart" data-product="Fruit Tart" data-price="8.90">Add to Cart</button>
@@ -770,7 +541,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="eggtart.png" alt="Egg Tart">
+            <img src="photo/eggtart.png" alt="Egg Tart">
             <p>Egg Tart</p>
             <br>RM 5.90
             <br><button class="add-to-cart" data-product="Egg Tart" data-price="5.90">Add to Cart</button>
@@ -783,7 +554,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td style="position: relative;">
-            <img src="baklava.png" alt="Baklava">
+            <img src="photo/baklava.png" alt="Baklava">
             <p>Baklava</p>
 			<span class="ribbon">NEW</span>
             <br>RM 8.90
@@ -798,6 +569,7 @@
         </td>
     </tr>
 
+    <tr height="80" class="separator-row"><td colspan="4"></td></tr>
 
 </table>
 
@@ -806,7 +578,7 @@
 <table border="0" width="1250" height="1000" align="center" style="text-align: center; vertical-align: middle; table-layout: fixed;">
     <tr>
         <td>
-            <img src="Chocolate.png" alt="Chocolate Cake">
+            <img src="photo/Chocolate.png" alt="Chocolate Cake">
             <p>Chocolate Cake</p>
             <br>RM 18.90
             <br><button class="add-to-cart" data-product="Chocolate Cake" data-price="18.90">Add to Cart</button>
@@ -819,7 +591,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="Cheesecake.png" alt="Cheesecake">
+            <img src="photo/Cheesecake.png" alt="Cheesecake">
             <p>Strawberry Cheesecake</p>
             <br>RM 22.90
             <br><button class="add-to-cart" data-product="Strawberry Cheesecake" data-price="22.90">Add to Cart</button>
@@ -832,7 +604,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td style="position: relative;">
-            <img src="rv.png" alt="Red Velvet Cake">
+            <img src="photo/rv.png" alt="Red Velvet Cake">
             <p>Red Velvet Cake</p>
 			<span class="ribbon">HOT</span>
             <br>RM 19.90
@@ -846,7 +618,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="lemon.png" alt="Lemon Drizzle Cake">
+            <img src="photo/lemon.png" alt="Lemon Drizzle Cake">
             <p>Lemon Drizzle Cake</p>
             <br>RM 15.90
             <br><button class="add-to-cart" data-product="Lemon Drizzle Cake" data-price="15.90">Add to Cart</button>
@@ -863,7 +635,7 @@
 
     <tr>
         <td>
-            <img src="carrot.png" alt="Carrot Cake">
+            <img src="photo/carrot.png" alt="Carrot Cake">
             <p>Carrot Cake</p>
             <br>RM 14.90
             <br><button class="add-to-cart" data-product="Carrot Cake" data-price="14.90">Add to Cart</button>
@@ -876,7 +648,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="bf.png" alt="Black Forest Cake">
+            <img src="photo/bf.png" alt="Black Forest Cake">
             <p>Black Forest Cake</p>
             <br>RM 22.90
             <br><button class="add-to-cart" data-product="Black Forest Cake" data-price="22.90">Add to Cart</button>
@@ -889,7 +661,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="coffee.png" alt="Coffee Cake">
+            <img src="photo/coffee.png" alt="Coffee Cake">
             <p>Coffee Cake</p>
             <br>RM 16.90
             <br><button class="add-to-cart" data-product="Coffee Cake" data-price="16.90">Add to Cart</button>
@@ -902,7 +674,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="vanilla.png" alt="Vanilla Sponge Cake">
+            <img src="photo/vanilla.png" alt="Vanilla Sponge Cake">
             <p>Vanilla Sponge Cake</p>
             <br>RM 15.90
             <br><button class="add-to-cart" data-product="Vanilla Sponge Cake" data-price="15.90">Add to Cart</button>
@@ -919,7 +691,7 @@
 
     <tr>
         <td style="position: relative;">
-            <img src="tiramisu.png" alt="Tiramisu Cake">
+            <img src="photo/tiramisu.png" alt="Tiramisu Cake">
             <p>Tiramisu Cake</p>
 			<span class="ribbon">HOT</span>
             <br>RM 21.90
@@ -933,7 +705,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="mango.png" alt="Mango Cake">
+            <img src="photo/mango.png" alt="Mango Cake">
             <p>Mango Cake</p>
             <br>RM 18.90
             <br><button class="add-to-cart" data-product="Mango Cake" data-price="18.90">Add to Cart</button>
@@ -946,7 +718,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="Hazelnut.png" alt="Hazelnut Cake">
+            <img src="photo/Hazelnut.png" alt="Hazelnut Cake">
             <p>Hazelnut Cake</p>
             <br>RM 21.90
             <br><button class="add-to-cart" data-product="Hazelnut Cake" data-price="21.90">Add to Cart</button>
@@ -959,7 +731,7 @@
 <span class="fa fa-star checked"></span>
         </td>
         <td>
-            <img src="caramel.png" alt="Caramel Cake">
+            <img src="photo/caramel.png" alt="Caramel Cake">
             <p>Caramel Cake</p>
             <br>RM 16.90
             <br><button class="add-to-cart" data-product="Caramel Cake" data-price="16.90">Add to Cart</button>
@@ -973,154 +745,99 @@
         </td>
     </tr>
 		
-		<tr>
-    <td colspan="4">
-        <hr style="border: none; border-top: 5px solid #FFB6C1; margin: 20px 0;">
-    </td>
-</tr>
-
-		<tr height="80" class="separator-row">
-    <td colspan="2" width="1000">
-        <figure style="text-align: center;">
-            <figcaption><p>Learn how croissants are made!</p></figcaption>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/HGMVivo_GLs?si=vkZqCX7pCPN4BWA3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </figure>
-    </td>
-    <td colspan="2" width="1000" >
-	<h1>Explore Our Delicious Menu!</h1>
-        <p align="center">
-      <a href="menu.pdf" target="blank">Crumbl Bakeria's Menu</a></p>
-    </td>
-</tr>
-
-	</table>
+		<tr height="80" class="separator-row"><td colspan="4"></td></tr>
+		
+    </table>
+	
 
 
+<!-- Cart Button -->
 <button class="cart-btn" onclick="toggleCart()">View Cart (<span id="cart-count">0</span>)</button>
 
+<!-- Cart Overlay -->
 <div class="cart-overlay" id="cart-overlay">
     <h3>Your Cart</h3>
     <ul id="cart-items">
-	
+        <!-- Items will appear here -->
     </ul>
 	<p>Total: RM <span id="total-price">0.00</span></p>
     <button class="close-btn" onclick="toggleCart()">Close</button>
-	<button class="close-btn" onclick="placeOrder()">Place Order</button>
+	<button class="place-order-btn" onclick="placeOrder()">Place Order</button>
     </div>
 
+    <!-- Order Placed Popup -->
     <div id="order-placed-popup" class="order-placed-popup" style="display: none;">
         <p>Order Placed</p>
         <button onclick="closeOrderPopup()">Close</button>
     </div>
-	
-	<footer style="background-color: #C54B8C; color: white; padding: 40px 20px; text-align: left; font-family: Arial, sans-serif;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
-     
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">About Crumbl Bakeria</h4>
-            <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
-                <li><a href="index.html" style="color: white; text-decoration: none;" class="link">Home</a></li>
-				<li><a href="about.html" style="color: white; text-decoration: none;" class="link">About us</a></li>
-				<li><a href="faq.html" style="color: white; text-decoration: none;" class="link">FAQ</a></li>
-                <li><a href="return policy.html" style="color: white; text-decoration: none;" class="link">Return Policy</a></li>
-            </ul>
-        </div>
-		
-  
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;" class="link">Products</h4>
-            <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
-                <li><a href="product.html#breads" style="color: white; text-decoration: none;" class="link">Breads</a></li>
-                <li><a href="product.html#pastries" style="color: white; text-decoration: none;" class="link">Pastries</a></li>
-                <li><a href="product.html#cakes" style="color: white; text-decoration: none;" class="link">Cakes</a></li>
-            </ul>
-        </div>
-		
 
-		<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-			<h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Customer Service</h4>
-			<ul style="list-style-type: none; padding: 0; line-height: 1.8;">
-				<li><a href="contact.html" style="color: white; text-decoration: none;" class="link">Contact Us</a></li><br>
-				<li><b>Phone:</b> +603-9202 6972 (Office)</li><br>
-				<li><b>Hotline:</b> +6010-362 7234</li><br>
-				<li><b></b> UG-23A, Shaftsbury Putrajaya,<br>Presint 1, 62050 Putrajaya,<br>Wilayah Persekutuan Putrajaya.</li>
-			</ul>
-		</div>
-		
-   
-        <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
-            <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Follow Us</h4>
-            <a href="https://www.tiktok.com/@crumblbakeria" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center; margin-bottom: 10px;">
-                <img src="tiktok_icon.png" alt="TikTok" style="width: 24px; height: 24px; margin-right: 8px;"> TikTok
-            </a>
-            <a href="https://www.instagram.com/crumbl_bakeria?igsh=dnF4NjQ1cDJpcHdo&utm_source=qr" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center;">
-                <img src="instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;"> Instagram
-            </a>
-        </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 20px; font-size: 14px;">
-        <p>&copy; 2025 Crumbl Bakeria. All rights reserved.</p>
-    </div>
-	</footer>
-	
 <script>
     let cart = [];
 
-    
+    // Function to handle adding items to the cart
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function() {
             const product = this.getAttribute('data-product');
-            const price = parseFloat(this.getAttribute('data-price')); 
+            const price = parseFloat(this.getAttribute('data-price')); // Convert price to a number
             
-            
+            // Add item to cart array
             cart.push({ product, price });
             
-            
+            // Update cart item count on the button
             document.getElementById('cart-count').textContent = cart.length;
             
-            
+            // Update the total price
             updateTotalPrice();
         });
     });
 
+    // Function to update the total price in the cart
     function updateTotalPrice() {
         const totalPrice = cart.reduce((total, item) => total + item.price, 0);
-        document.getElementById('total-price').textContent = totalPrice.toFixed(2); 
+        document.getElementById('total-price').textContent = totalPrice.toFixed(2); // Format the total to 2 decimal places
     }
 
+    // Function to toggle the cart visibility
     function toggleCart() {
         const cartOverlay = document.getElementById('cart-overlay');
         const cartItems = document.getElementById('cart-items');
         
+        // Toggle the visibility of the cart
         cartOverlay.style.display = (cartOverlay.style.display === 'block') ? 'none' : 'block';
         
+        // Clear previous cart items
         cartItems.innerHTML = '';
         
+        // Populate cart items in the overlay
         cart.forEach(item => {
             const li = document.createElement('li');
             li.textContent = `${item.product} - RM ${item.price.toFixed(2)}`; // Ensure price is displayed correctly
             cartItems.appendChild(li);
         });
         
+        // Update the total price
         updateTotalPrice();
     }
 
+    // Function to handle placing the order
     function placeOrder() {
         // Show order placed popup
         const popup = document.getElementById('order-placed-popup');
         popup.style.display = 'block';
         
+        // Reset the cart
         cart = [];
         document.getElementById('cart-count').textContent = '0';
         
+        // Update total price
         updateTotalPrice(); // Ensure total price is reset to 0
     }
 
+    // Function to close the order placed popup
     function closeOrderPopup() {
         const popup = document.getElementById('order-placed-popup');
         popup.style.display = 'none';
-        toggleCart();  
+        toggleCart();  // Close the cart after order placed
     }
 	
         function myFunction() {
@@ -1145,35 +862,7 @@
             }
         }
 
-	// Top button
-    window.onscroll = function() {
-    var mybutton = document.getElementById("goToTopBtn");
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
-    }
-	};
 
-	function topFunction() {
-		document.body.scrollTop = 0;
-		document.documentElement.scrollTop = 0;
-	}
-
-        let audio = document.getElementById("audio");
-        let marquee = document.getElementById("marquee");
-        let isPlaying = false;
-
-        function toggleSound() {
-            if (isPlaying) {
-                audio.pause();
-               
-            } else {
-                audio.play();
-            }
-            isPlaying = !isPlaying;
-        }
-		
 </script>
 
 

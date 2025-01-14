@@ -1,8 +1,8 @@
-<html>
+<html lang="en">
 <head>
-    
-    <title>Contact Us</title>
-	<link rel="icon" href="images/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Crumbl Bakeria</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -16,96 +16,72 @@
 		padding: 0;
 		background-color: #F5F5DC;
 	}
-	
-	h1 {
-            text-align: center;
-			font-family: "DM Serif Text", serif;
-		    font-weight: 400;
-		    font-style: normal
-		}
 
 	#navbar {
-    overflow: hidden;
-    padding: 10px 0;
-    transition: 0.4s;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    text-align: center;
-    background-color: #C54B8C;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-}
+		overflow: hidden;
+		padding: 10px 0;
+		transition: 0.4s;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 10;
+		text-align: center;
+		background-color: #C54B8C;
+		left: 0;
+	}
 
+	#navbar a {
+		float: left;
+		color: black;
+		text-align: center;
+		padding: 12px 20px; 
+		text-decoration: none;
+		font-size: 20px;
+		line-height: 25px;
+		border-radius: 4px;
+		color: #FFFFFF;
+	}
 
-		#navbar a {
-			float: left;
-			color: black;
-			text-align: center;
-			padding: 12px 20px; 
-			text-decoration: none;
-			font-size: 20px;
-			line-height: 25px;
-			border-radius: 4px;
-			color: #FFFFFF;
-		}
+	#navbar a:hover {
+		background-color: pink;
+		color: black;
+	}
 
-#navbar h1 {
-    font-size: 40px;  
-}
+	#navbar #logo:hover {
+		background-color: transparent; 
+		color: #FFFFFF;
+		transform: scale(1.1);		
+	}
 
-		#navbar a:hover {
-			background-color: pink;
-			color: black;
-		}
+	#navbar a.active {
+		color: white; 
+		background-color: #FFB6C1;
+	}
 
-		#navbar #logo:hover {
-			background-color: transparent; 
-			color: #FFFFFF;
-			transform: scale(1.1);
-		}
-
-		#navbar a.active {
-			color: white; 
-			background-color: #FFB6C1;
-		}
-
-#navbar-right {
-    display: flex;
-    align-items: center; 
-    justify-content: flex-end; 
-    height: 100%; 
-}
+	#navbar-right {
+		float: right;
+	}
 	
 	/* Top Button */
-		#goToTopBtn {
-			display: none;
-			position: fixed;
-			bottom: 40px;
-			right: 30px;
-			z-index: 9999;
-			padding: 15px 25px;
-			border: none;
-			cursor: pointer;
-			background-color: transparent;
-		}
-		
-		#goToTopBtn img {
-    width: 70px;  
-    height: 70px; 
-}
-		
-		#goToTopBtn:hover {
-			transform: scale(1.1);
-		}
+	#goToTopBtn {
+		display: none;
+		position: fixed;
+		bottom: 20px;
+		right: 30px;
+		z-index: 9999;
+		padding: 15px 25px;
+		border: none;
+		cursor: pointer;
+		background-color: transparent;
+	}
+	
+	#goToTopBtn:hover {
+		transform: scale(1.1);
+	}
 
-		#goToTopBtn:hover img {
-			transform: scale (1.1); 
-		}
+	#goToTopBtn:hover img {
+		transform: scale(1.1); 
+	}
 		
 	.main-content {
 		padding-top: 100px;
@@ -115,16 +91,14 @@
 	.banner-container {
 		width: 100%;
 		height: auto;
+		margin-bottom: 40px;
 	}
 
 	.banner-container img {
-    width: 100%;
-		  height: auto;
-		  display: block;
-		  max-width: 100%;
-		  object-fit: cover;
-		  margin-top: -50px;
-}
+		width: 100%;
+		height: auto;
+		display: block;
+	}
 
 	.contact-container {
 		max-width: 1200px;
@@ -183,8 +157,8 @@
 
 	.whatsapp-icon {
 		position: fixed;
-		bottom: 65px;
-			right: 10px;
+		bottom: 20px;
+		right: 20px;
 		z-index: 100;
 		transition: transform 0.3s;
 	}
@@ -192,42 +166,6 @@
 	.whatsapp-icon:hover {
 		transform: scale(1.1);
 	}
-
-.thank-you-popup {
-    display: none; 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #FFB6C1;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    z-index: 1000;
-}
-
-
-.popup-text {
-    font-family: 'DM Serif Text', serif;
-    font-size: 24px;
-    color: #fff;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-    animation: bounce 1.5s infinite; 
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
 
 	footer {
 		background-color: #C54B8C;
@@ -252,8 +190,8 @@
 
 	.footer-section h4 {
 		border-bottom: 2px solid white;
-		padding-bottom: 15px; 
-		margin-bottom: 20px; 
+		padding-bottom: 15px; /* Increased padding below the heading */
+		margin-bottom: 20px; /* Increased margin after the border */
 	}
 
 	.footer-section ul {
@@ -274,16 +212,17 @@
 
 	.footer-bottom {
 		text-align: center;
-		margin-top: 30px; 
-		padding-top: 30px; 
-		border-top: 1px solid rgba(255, 255, 255, 0.3); 
+		margin-top: 30px; /* Increased top margin */
+		padding-top: 30px; /* Increased top padding */
+		border-top: 1px solid rgba(255, 255, 255, 0.3); /* Made the line slightly more visible */
 	}
 </style>
 <body>
 
     <nav id="navbar">
         <a href="index.html" id="logo">
-					<h1>crumbl bakeria</h1></a>
+            <img src="images/logo.png" height="80" width="80" alt="logo">
+        </a>
         <div id="navbar-right">
             <a href="index.html">Home</a>
             <a href="product.html">Product</a>
@@ -293,13 +232,13 @@
     </nav>
 	
 	<button onclick="topFunction()" id="goToTopBtn" title="Go to top">
-		  <img src="up_button.png" alt="Go to top" />
+		  <img src="images/up_button.png" alt="Go to top" />
 	</button>
 	
     <div class="main-content">
 
         <div class="banner-container">
-            <img src="contactbanner.png" alt="Contact Us Banner">
+            <img src="images/contactbanner.png" alt="Contact Us Banner">
         </div>
 
 
@@ -322,10 +261,6 @@
                 </form>
             </div>
         </div>
-
-<div id="thankYouPopup" class="thank-you-popup">
-    <p class="popup-text">Thank you for reaching out!</p>
-</div>
 
         <a href="https://wa.me/60103627234" class="whatsapp-icon">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="50">
@@ -364,14 +299,14 @@
                 </ul>
             </div>
             
-            
+            <!-- Social Media Section -->
 			<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
 				<h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Follow Us</h4>
 				<a href="https://www.tiktok.com/@crumblbakeria" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center; margin-bottom: 10px;">
-					<img src="tiktok_icon.png" alt="TikTok" style="width: 24px; height: 24px; margin-right: 8px;"> TikTok
+					<img src="images/tiktok_icon.png" alt="TikTok" style="width: 24px; height: 24px; margin-right: 8px;"> TikTok
 				</a>
 				<a href="https://www.instagram.com/crumbl_bakeria?igsh=dnF4NjQ1cDJpcHdo&utm_source=qr" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center;">
-					<img src="instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;"> Instagram
+					<img src="images/instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;"> Instagram
 				</a>
 			</div>
 		</div>
@@ -379,10 +314,8 @@
             <p>&copy; 2025 Crumbl Bakeria. All rights reserved.</p>
         </div>
     </footer>
-	
-	
 	<script>
-	
+	// Top button
     window.onscroll = function() {
     var mybutton = document.getElementById("goToTopBtn");
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
@@ -396,24 +329,6 @@
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	}
-
-    
-    function showThankYouPopup(event) {
-        event.preventDefault(); 
-
-        
-        document.getElementById("thankYouPopup").style.display = "block";
-
-        
-        setTimeout(function() {
-            location.reload(); 
-        }, 2000); 
-    }
-
-    document.querySelector(".contact-form form").addEventListener("submit", showThankYouPopup);
-
 	</script>
-	
-	
 </body>
 </html>
