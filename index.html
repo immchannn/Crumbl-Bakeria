@@ -1,7 +1,6 @@
 <html>
 <head>
-    <title>Crumbl Bakeria</title>
-	<link rel="icon" href="images/logo.png" type="image/x-icon">
+    <title>Home</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
@@ -15,6 +14,7 @@
             background-color: #F5F5DC;
         }
         
+
         h1 {
             text-align: center;
 			font-family: "DM Serif Text", serif;
@@ -45,7 +45,7 @@
 			width: 100%; 
 			height: auto;
 			border-radius: 8px;
-			margin-top: 50px;
+			margin-top: 110px;
 		}
 
         .prev, .next {
@@ -92,21 +92,17 @@
         }
 		  
 		#navbar {
-    overflow: hidden;
-    padding: 10px 0;
-    transition: 0.4s;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    text-align: center;
-    background-color: #C54B8C;
-    left: 0;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    height: 60px; 
-}
+			overflow: hidden;
+			padding: 10px 0; 
+			transition: 0.4s;
+			position: fixed;
+			width: 100%; 
+			top: 0;
+			z-index: 10;
+			text-align: center;
+			background-color: #C54B8C;
+			left: 0; 
+		}
 
 		#navbar a {
 			float: left;
@@ -136,18 +132,15 @@
 			background-color: #FFB6C1;
 		}
 
-#navbar-right {
-    display: flex;
-    align-items: center; 
-    justify-content: flex-end; 
-    height: 100%;
-}
+		#navbar-right {
+			float: right;
+		}
 		
 		/* Top Button */
 		#goToTopBtn {
 			display: none;
 			position: fixed;
-			bottom: 40px;
+			bottom: 20px;
 			right: 30px;
 			z-index: 9999;
 			padding: 15px 25px;
@@ -156,17 +149,12 @@
 			background-color: transparent;
 		}
 		
-		#goToTopBtn img {
-    width: 70px;  
-    height: 70px; 
-}
-		
 		#goToTopBtn:hover {
 			transform: scale(1.1);
 		}
 
 		#goToTopBtn:hover img {
-			transform: scale (1.1); 
+			transform: scale(1.1); 
 		}
 		
         .slideshow-container {
@@ -184,20 +172,20 @@
 		}
 
 		.banner-cell {
-			padding: 70;
+			padding: 0;
 		}
 
 		.banner-image {
 			width: 100%; 
-			height: 100%; 
+			height: auto; 
 			display: block; 
 		}
 		
-		
+		/* Best Sellings*/
 		.best-seller {
 			text-align: center;
 			background-color: #F5F5DC;
-			padding: 70px 0; 
+			padding: 20px 0; 
 		}
 
 		.best-cell {
@@ -217,6 +205,7 @@
 			line-height: 1.5; 
 		}
 		
+		/* Best Seller Product */
 		.product-row {
 			text-align: center; 
 			background-color: #F5F5DC;
@@ -252,6 +241,7 @@
 			margin: 0; 
 		}
 		
+		/* Our Products */
 		.product-header-row {
 			background-color: #F5F5DC; 
 			text-align: center; 
@@ -267,49 +257,18 @@
 			color: #C54B8C; 
 			margin: 0; 
 			text-transform: uppercase; 
-			margin-top: 30px;
+			margin-top: 100px;
 		}
 		
 		.product-image-row {
 			background-color: #F5F5DC; 
 			text-align: center; 
-			padding: 50px 0;
+			padding: 20px 0;
 		}
 
-.product-image-cell img {
-    width: 200px; 
-    height: 200px; 
-    object-fit: cover; 
-    margin: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    display: inline-block;
-}
-
-.product-image-cell a:hover img {
-    transform: scale(1.1); 
-    opacity: 0.5; 
-}
-
-.product-image-cell a {
-    display: inline-block;
-    position: relative;
-}
-
-.product-image-cell a:hover::after {
-    content: attr(data-hover-text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
-	font-family: 'Merriweather', serif;
-	background-color: pink;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-
+		.product-image-cell {
+			padding: 20px; 
+		}
 
 		.op {
 			width: 200px; 
@@ -346,22 +305,24 @@
         </tr>
 	
 		<button onclick="topFunction()" id="goToTopBtn" title="Go to top">
-		  <img src="up_button.png" alt="Go to top" />
+		  <img src="images/up_button.png" alt="Go to top" />
 		</button>
         
         <tr>
             <td>
                 <div class="slideshow-container">
                     <div class="mySlides fade" style="display: block;">
-                        <img src="banner.png" alt="Banner 1">
+                        <img src="images/banner1.png" alt="Banner 1">
                     </div>
                     <div class="mySlides fade">
-                        <img src="banner2.png" alt="Banner 2">
+                        <img src="images/banner2.png" alt="Banner 2">
                     </div>
                     <div class="mySlides fade">
-                        <img src="banner3.png" alt="Banner 3">
+                        <img src="images/banner3.png" alt="Banner 3">
                     </div>
-					
+                    <div class="mySlides fade">
+                        <img src="images/banner.png" alt="Banner 4">
+                    </div>
                     <a class="prev" onclick="plusSlides(-1)">❮</a>
                     <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
@@ -369,6 +330,7 @@
                     <span class="dot" onclick="currentSlide(1)"></span>
                     <span class="dot" onclick="currentSlide(2)"></span>
                     <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
                 </div>
             </td>
         </tr>
@@ -376,37 +338,37 @@
 	</table>
 
 	<table border="0" align="center" width="1250">
-		<tr height="700">
+		<tr>
             <td colspan="8">
-                <img src="banner4.png" class="banner-image" alt="Banner">
+                <img src="images/banner4.png" class="banner-image" alt="Banner">
             </td>
         </tr>
 		
         <tr class="best-seller">
 			<td class="best-cell" colspan="8">
-				<h1>Best Sellers</h1>
+				<h1>Best Sellings</h1>
 				<p>Don’t miss out on our top-selling items—freshly baked and loved by everyone!</p>
 			</td>
 		</tr>
 		
-       <tr class="product-row" height="300">
+       <tr class="product-row">
 			<td class="product-cell" colspan="2">
-				<img src="Baguette.png" alt="Baguette" class="bs">
+				<img src="images/Baguette.png" alt="Baguette" class="bs">
 				<p>Baguette</p>
 				<p>RM 6.90</p>
 			</td>
 			<td class="product-cell" colspan="2">
-				<img src="apple.png" alt="Apple Turnover" class="bs">
+				<img src="images/apple.png" alt="Apple Turnover" class="bs">
 				<p>Apple Turnover</p>
 				<p>RM 5.90</p>
 			</td>
 			<td class="product-cell" colspan="2">
-				<img src="Garlic Bread.png" alt="Garlic Bread" class="bs">
+				<img src="images/Garlic Bread.png" alt="Garlic Bread" class="bs">
 				<p>Garlic Bread</p>
 				<p>RM 7.90</p>
 			</td>
 			<td class="product-cell" colspan="2">
-				<img src="Cheesecake.png" alt="Cheesecake" class="bs">
+				<img src="images/Cheesecake.png" alt="Cheesecake" class="bs">
 				<p>Strawberry Cheesecake</p>
 				<p>RM 7.90</p>
 			</td>
@@ -418,28 +380,19 @@
 			</td>
 		</tr>
 		
-		<tr class="product-image-row" height="300">
-    <td class="product-image-cell" colspan="8" align="center">
-        <a href="product.html#breads" data-hover-text="Breads">
-            <img class="op" src="product1.jpg" alt="breads">
-        </a>
-        <a href="product.html#pastries" data-hover-text="Pastries">
-            <img class="op" src="product2.jpg" alt="pastries">
-        </a>
-        <a href="product.html#cakes" data-hover-text="Cakes">
-            <img class="op" src="product3.jpg" alt="Cakes">
-        </a>
-		<br>
-    </td>
-</tr>
-
+		<tr class="product-image-row">
+			<td class="product-image-cell" colspan="8" align="center">
+				<img class="op" src="images/product1.jpg" alt="breads">
+				<img class="op" src="images/product2.jpg" alt="pastries">
+				<img class="op" src="images/product3.jpg" alt="Cakes">
+			</td>
+		</tr>
 		
     </table>
 	
 	<footer style="background-color: #C54B8C; color: white; padding: 40px 20px; text-align: left; font-family: Arial, sans-serif;">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;">
-        
-		
+        <!-- About Section -->
         <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
             <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">About Crumbl Bakeria</h4>
             <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
@@ -450,8 +403,7 @@
             </ul>
         </div>
 		
-        
-		
+        <!-- Products Section -->
         <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
             <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;" class="link">Products</h4>
             <ul style="list-style-type: none; padding: 0; line-height: 1.8;">
@@ -461,32 +413,29 @@
             </ul>
         </div>
 		
-        
-		
+        <!-- Customer Service Section -->
 		<div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
 			<h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Customer Service</h4>
 			<ul style="list-style-type: none; padding: 0; line-height: 1.8;">
-				<li><a href="contact.html" style="color: white; text-decoration: none;" class="link">Contact Us</a></li><br>
-				<li><b>Phone:</b> +603-9202 6972 (Office)</li><br>
-				<li><b>Hotline:</b> +6010-362 7234</li><br>
+				<li><a href="contact.html" style="color: white; text-decoration: none;" class="link">Contact Us</a></li>
+				<li><b>Phone:</b> +603-9202 6972 (Office)</li>
+				<li><b>Hotline:</b> +6010-362 7234</li>
 				<li><b></b> UG-23A, Shaftsbury Putrajaya,<br>Presint 1, 62050 Putrajaya,<br>Wilayah Persekutuan Putrajaya.</li>
 			</ul>
 		</div>
 		
-        
-		
+        <!-- Social Media Section -->
         <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
             <h4 style="border-bottom: 2px solid white; padding-bottom: 10px;">Follow Us</h4>
-            <a href="https://www.tiktok.com/@crumbl_bakeria?_t=ZS-8t3pwTk9Mud&_r=1" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center; margin-bottom: 10px;">
-                <img src="tiktok_icon.png" alt="TikTok" style="width: 24px; height: 24px; margin-right: 8px;"> TikTok
+            <a href="https://www.tiktok.com/@crumblbakeria" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center; margin-bottom: 10px;">
+                <img src="images/tiktok_icon.png" alt="TikTok" style="width: 24px; height: 24px; margin-right: 8px;"> TikTok
             </a>
             <a href="https://www.instagram.com/crumbl_bakeria?igsh=dnF4NjQ1cDJpcHdo&utm_source=qr" target="_blank" class="click" style="color: white; text-decoration: none; display: flex; align-items: center;">
-                <img src="instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;"> Instagram
+                <img src="images/instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px; margin-right: 8px;"> Instagram
             </a>
         </div>
     </div>
-    
-	
+    <!-- Bottom Footer -->
     <div style="text-align: center; margin-top: 20px; font-size: 14px;">
         <p>&copy; 2025 Crumbl Bakeria. All rights reserved.</p>
     </div>
@@ -519,7 +468,7 @@
             dots[slideIndex - 1].className += " active";
         }
 		
-		
+		// Top button
 		window.onscroll = function() {
 		var mybutton = document.getElementById("goToTopBtn");
 		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
